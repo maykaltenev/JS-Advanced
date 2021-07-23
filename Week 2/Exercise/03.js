@@ -1,27 +1,24 @@
 function solve(input) {
 
-    let sum = 1;
+
     let isEmpty = true;
-    let current = 0;
+    let current = 1;
     let result = [];
-    for (let i = 0; i <= input.length; i++) {
+
+    for (let i = 0; i < input.length; i++) {
         if (input[i] === 'add') {
-
-            current += 1;
-            result.push(current);
+            result.push(i + 1);
         } else if (input[i] === 'remove') {
-        current -= current;
-        result.push(current);
+            result.pop(i - 1);
+        }
     }
-}
-if (result === undefined || result <= 0) {
-    console.log('Empty');
-    return;
-} else {
-    console.log(result.join('\n'));
+    if (result === undefined || result <= 0) {
+        console.log('Empty');
+        return;
+    } else
+        console.log(result.join('\n'));
 }
 
-}
 
 
 solve(['add',
